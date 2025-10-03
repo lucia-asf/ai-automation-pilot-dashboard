@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Moderation Pilot - Performance Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/recharts@2.5.0/dist/Recharts.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+        }
+        #loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 24px;
+            color: #4B5563;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">Loading dashboard...</div>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        const { useState } = React;
+        const { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Cell, ResponsiveContainer, PieChart, Pie } = Recharts;
+
+        const AIPilotDashboard = () => {
+            const [activeTab, setActiveTab] = useState('daily-volume');
+
+            const dailyTicketsData = [
+                { date: "26/Aug", count: 2 }, { date: "27/Aug", count: 5 }, { date: "28/Aug", count: 1 },
+                { date: "30/Aug", count: 1 }, { date: "01/Sep", count: 1 }, { date: "04/Sep", count: 1 },
+                { date: "05/Sep", count: 6 }, { date: "09/Sep", count: 5 }, { date: "10/Sep", count: 3 },
+                { date: "11/Sep", count: 6 }, { date: "12/Sep", count: 2 }, { date: "13/Sep", count: 4 },
+                { date: "14/Sep", count: 2 }, { date: "15/Sep", count: 6 }, { date: "16/Sep", count: 6 },
+                { date: "17/Sep", count: 8 }, { date: "18/Sep", count: 128 }, { date: "19/Sep", count: 3 },
+                { date: "20/Sep", count: 5 }, { date: "21/Sep", count: 3 }, { date: "22/Sep", count: 7 },
+                { date: "23/Sep", count: 12 }, { date: "24/Sep", count: 9 }, { date: "25/Sep", count: 6 },
+                { date: "26/Sep", count: 1 }, { date: "27/Sep", count: 5 }, { date: "28/Sep", count: 1 },
+                { date: "29/Sep", count: 4 }, { date: "30/Sep", count: 185 }, { date: "01/Oct", count: 20 },
+                { date: "02/Oct", count: 2 }, { date: "03/Oct", count: 3 }
+            ];
+
+            const keywordData = [
+                { keyword: 'event', count: 5 }, { keyword: 'member', count: 3 }, { keyword: 'sponsor', count: 3 },
+                { keyword: 'Raffle', count: 2 }, { keyword: 'events', count: 2 }, { keyword: 'membership', count: 2 },
+                { keyword: 'Payment', count: 2 }, { keyword: 'levy', count: 1 }, { keyword: 'Sponsorship', count: 1 },
+                { keyword: 'benefit', count: 1 }, { keyword: 'cap', count: 1 }, { keyword: 'Event', count: 1 },
+                { keyword: 'sponsorship', count: 1 }, { keyword: 'shirt', count: 1 }, { keyword: 'tickets', count: 1 }
+            ];
+
+            const workflowData = [
+                { flow: 'Direct to Done', count: 216, percentage: 47.7, description: 'Likely False Positives' },
+                { flow: 'In Progress → Done', count: 15, percentage: 3.3, description: 'True Positives' },
+                { flow: 'Currently In Progress', count: 39, percentage: 8.6, description: 'Under Review' },
+                { flow: 'Still in To Do', count: 183, percentage: 40.4, description: 'Awaiting Review' }
+            ];
+
+            const falsePositiveData = {
+                byCategory: [
+                    { category: 'Inducement', count: 197 }, { category: 'Membership/Fees', count: 190 },
+                    { category: 'Ticketing/Admission', count: 181 }, { category: 'Sponsorship', count: 166 },
+                    { category: 'Advertising', count: 161 }, { category: 'Personal Contact', count: 153 },
+                    { category: 'Gambling', count: 5 }
+                ],
+                byConfidence: [
+                    { range: '0.8-1.0', count: 198, percentage: '19%' }, { range: '0.6-0.8', count: 438, percentage: '42%' },
+                    { range: '0.4-0.6', count: 376, percentage: '36%' }, { range: '0.2-0.4', count: 41, percentage: '4%' }
+                ],
+                bySeverity: [
+                    { severity: 'High', count: 50, percentage: '24%' }, { severity: 'Medium', count: 147, percentage: '71%' },
+                    { severity: 'Low', count: 9, percentage: '4%' }
+                ],
+                topKeywords: [
+                    { keyword: 'event', count: 3 }, { keyword: 'member', count: 2 }, { keyword: 'Event', count: 1 },
+                    { keyword: 'Payment', count: 1 }, { keyword: 'sponsorship', count: 1 }
+                ]
+            };
+
+            const truePositiveData = {
+                byCategory: [
+                    { category: 'Inducement', count: 8 }, { category: 'Membership/Fees', count: 7 },
+                    { category: 'Advertising', count: 7 }, { category: 'Sponsorship', count: 7 },
+                    { category: 'Ticketing/Admission', count: 7 }, { category: 'Personal Contact', count: 6 }
+                ],
+                byConfidence: [
+                    { range: '0.8-0.9', count: 8, percentage: '19%' }, { range: '0.7-0.8', count: 7, percentage: '17%' },
+                    { range: '0.6-0.7', count: 12, percentage: '29%' }, { range: '0.5-0.6', count: 13, percentage: '31%' },
+                    { range: '0.4-0.5', count: 2, percentage: '5%' }
+                ],
+                bySeverity: [
+                    { severity: 'High', count: 2, percentage: '25%' }, { severity: 'Medium', count: 6, percentage: '75%' }
+                ],
+                topKeywords: [
+                    { keyword: 'sponsor', count: 3 }, { keyword: 'Raffle', count: 1 }, { keyword: 'membership', count: 1 },
+                    { keyword: 'member', count: 1 }, { keyword: 'cap', count: 1 }
+                ]
+            };
+
+            const COLORS = {
+                primary: '#3b82f6', secondary: '#8b5cf6', success: '#10b981',
+                warning: '#f59e0b', danger: '#ef4444', info: '#06b6d4'
+            };
+
+            const WORKFLOW_COLORS = ['#ef4444', '#10b981', '#f59e0b', '#9ca3af'];
+
+            const MetricCard = ({ title, value, subtitle, color, additionalInfo }) => (
+                <div className="bg-white rounded-lg shadow p-6 border-l-4" style={{ borderLeftColor: color }}>
+                    <div className="text-sm font-medium text-gray-600 mb-1">{title}</div>
+                    <div className="text-3xl font-bold text-gray-900 mb-1">{value}</div>
+                    <div className="text-sm text-gray-500">{subtitle}</div>
+                    {additionalInfo && <div className="text-xs text-gray-400 mt-2">{additionalInfo}</div>}
+                </div>
+            );
+
+            return (
+                <div className="min-h-screen bg-gray-50 p-8">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="mb-8">
+                            <h1 className="text-3xl font-bold text-gray-900 mb-2">AI Moderation Performance Analysis</h1>
+                            <p className="text-gray-600">Detailed performance metrics and accuracy analysis • Aug 26 - Oct 3, 2025</p>
+                        </div>
+
+                        <div className="grid grid-cols-4 gap-6 mb-8">
+                            <MetricCard title="Total Cases Analyzed" value="453" subtitle="AI-flagged content" color={COLORS.primary} />
+                            <MetricCard title="False Positives" value="216" subtitle="47.7% went direct to Done" 
+                                color={COLORS.danger} additionalInfo="Cases resolved without review" />
+                            <MetricCard title="True Positives" value="15" subtitle="6.5% precision rate" 
+                                color={COLORS.success} additionalInfo="In Progress → Done workflow" />
+                            <MetricCard title="Awaiting Review" value="222" subtitle="49% still in queue" color={COLORS.info} />
+                        </div>
+
+                        <div className="bg-white rounded-lg shadow mb-8">
+                            <div className="border-b border-gray-200">
+                                <div className="flex flex-wrap gap-4 px-6">
+                                    {['daily-volume', 'keywords', 'workflow', 'false-positives', 'true-positives'].map((tab) => (
+                                        <button key={tab} onClick={() => setActiveTab(tab)}
+                                            className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
+                                                activeTab === tab ? 'border-blue-500 text-blue-600' : 
+                                                'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}>
+                                            {tab === 'daily-volume' ? 'Daily Volume' : tab === 'keywords' ? 'Keywords' :
+                                             tab === 'workflow' ? 'Workflow Analysis' : tab === 'false-positives' ? 'False Positives' : 'True Positives'}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="p-6">
+                                {activeTab === 'daily-volume' && (
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-gray-900 mb-4">Tickets Created by Day</h3>
+                                        <ResponsiveContainer width="100%" height={400}>
+                                            <LineChart data={dailyTicketsData}>
+                                                <CartesianGrid strokeDasharray="3 3" />
+                                                <XAxis dataKey="date" angle={-45} textAnchor="end" height={80} />
+                                                <YAxis />
+                                                <Tooltip />
+                                                <Legend />
+                                                <Line type="monotone" dataKey="count" stroke={COLORS.primary} strokeWidth={2} name="Tickets Created" />
+                                            </LineChart>
+                                        </ResponsiveContainer>
+                                        <div className="mt-6 grid grid-cols-3 gap-4">
+                                            <div className="bg-blue-50 rounded-lg p-4">
+                                                <div className="text-sm text-blue-600 font-medium mb-1">Average per Day</div>
+                                                <div className="text-2xl font-bold text-blue-900">14.2</div>
+                                            </div>
+                                            <div className="bg-green-50 rounded-lg p-4">
+                                                <div className="text-sm text-green-600 font-medium mb-1">Peak Day</div>
+                                                <div className="text-2xl font-bold text-green-900">185</div>
+                                                <div className="text-xs text-green-700 mt-1">30/Sep (bulk import)</div>
+                                            </div>
+                                            <div className="bg-purple-50 rounded-lg p-4">
+                                                <div className="text-sm text-purple-600 font-medium mb-1">Total Days Active</div>
+                                                <div className="text-2xl font-bold text-purple-900">32</div>
+                                            </div>
+                                        </div>
+                                        <div className="mt-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg p-4">
+                                            <div className="text-sm text-yellow-800">
+                                                <strong>Note:</strong> Two major spikes observed: 185 tickets on Sep 30 and 128 on Sep 18.
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {activeTab === 'keywords' && (
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-gray-900 mb-4">Most Frequently Flagged Keywords</h3>
+                                        <ResponsiveContainer width="100%" height={400}>
+                                            <BarChart data={keywordData}>
+                                                <CartesianGrid strokeDasharray="3 3" />
+                                                <XAxis dataKey="keyword" angle={-45} textAnchor="end" height={100} />
+                                                <YAxis />
+                                                <Tooltip />
+                                                <Bar dataKey="count" fill={COLORS.info} />
+                                            </BarChart>
+                                        </ResponsiveContainer>
+                                        <div className="mt-6 grid grid-cols-2 gap-4">
+                                            <div className="bg-cyan-50 rounded-lg p-4">
+                                                <div className="text-sm text-cyan-600 font-medium mb-2">Most Common Triggers</div>
+                                                <div className="text-xl font-bold text-cyan-900">"event" & "member"</div>
+                                            </div>
+                                            <div className="bg-red-50 rounded-lg p-4">
+                                                <div className="text-sm text-red-600 font-medium mb-2">Critical Finding</div>
+                                                <div className="text-sm text-red-800">Only 27 tickets (6%) had keyword flags</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {activeTab === 'workflow' && (
+                                    <div className="space-y-6">
+                                        <div>
+                                            <h3 className="text-lg font-semibold text-gray-900 mb-4">Ticket Resolution Workflow Analysis</h3>
+                                            <ResponsiveContainer width="100%" height={300}>
+                                                <BarChart data={workflowData}>
+                                                    <CartesianGrid strokeDasharray="3 3" />
+                                                    <XAxis dataKey="flow" angle={-15} textAnchor="end" height={80} />
+                                                    <YAxis />
+                                                    <Tooltip />
+                                                    <Bar dataKey="count">
+                                                        {workflowData.map((entry, index) => (
+                                                            <Cell key={`cell-${index}`} fill={WORKFLOW_COLORS[index]} />
+                                                        ))}
+                                                    </Bar>
+                                                </BarChart>
+                                            </ResponsiveContainer>
+                                        </div>
+                                        <div className="grid grid-cols-2 gap-4">
+                                            {workflowData.map((item, index) => (
+                                                <div key={item.flow} className="border rounded-lg p-4" 
+                                                    style={{ borderLeftWidth: '4px', borderLeftColor: WORKFLOW_COLORS[index] }}>
+                                                    <div className="flex justify-between items-start mb-2">
+                                                        <div className="font-medium text-gray-900">{item.flow}</div>
+                                                        <div className="text-xl font-bold text-gray-900">{item.count}</div>
+                                                    </div>
+                                                    <div className="text-sm text-gray-600 mb-1">{item.percentage}% of total</div>
+                                                    <div className="text-xs text-gray-500">{item.description}</div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <div className="bg-red-50 border-l-4 border-red-400 rounded-lg p-4">
+                                            <div className="font-medium text-red-900 mb-2">Critical Performance Metrics</div>
+                                            <div className="text-sm text-red-800 space-y-1">
+                                                <p>• <strong>Precision: 6.5%</strong> (15 true positives out of 231 resolved)</p>
+                                                <p>• <strong>False Positive Rate: 47.7%</strong> (216 cases required no action)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {activeTab === 'false-positives' && (
+                                    <div className="space-y-8">
+                                        <div className="bg-red-50 border-l-4 border-red-400 rounded-lg p-4">
+                                            <div className="font-medium text-red-900">False Positives: 216 (47.7%)</div>
+                                        </div>
+                                        <div className="grid grid-cols-2 gap-8">
+                                            <div>
+                                                <h4 className="font-semibold text-gray-900 mb-3">By Category</h4>
+                                                <ResponsiveContainer width="100%" height={300}>
+                                                    <BarChart data={falsePositiveData.byCategory}>
+                                                        <CartesianGrid strokeDasharray="3 3" />
+                                                        <XAxis dataKey="category" angle={-30} textAnchor="end" height={100} />
+                                                        <YAxis />
+                                                        <Tooltip />
+                                                        <Bar dataKey="count" fill={COLORS.danger} />
+                                                    </BarChart>
+                                                </ResponsiveContainer>
+                                            </div>
+                                            <div>
+                                                <h4 className="font-semibold text-gray-900 mb-3">By Confidence</h4>
+                                                <ResponsiveContainer width="100%" height={300}>
+                                                    <PieChart>
+                                                        <Pie data={falsePositiveData.byConfidence} cx="50%" cy="50%"
+                                                            label={({ range, percentage }) => `${range}: ${percentage}`}
+                                                            outerRadius={100} dataKey="count">
+                                                            {falsePositiveData.byConfidence.map((entry, idx) => (
+                                                                <Cell key={idx} fill={['#ef4444', '#f97316', '#fbbf24', '#84cc16'][idx]} />
+                                                            ))}
+                                                        </Pie>
+                                                        <Tooltip />
+                                                    </PieChart>
+                                                </ResponsiveContainer>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {activeTab === 'true-positives' && (
+                                    <div className="space-y-8">
+                                        <div className="bg-green-50 border-l-4 border-green-400 rounded-lg p-4">
+                                            <div className="font-medium text-green-900">Confirmed True Positives: 15 (3.3%)</div>
+                                        </div>
+                                        <div className="grid grid-cols-2 gap-8">
+                                            <div>
+                                                <h4 className="font-semibold text-gray-900 mb-3">By Category</h4>
+                                                <ResponsiveContainer width="100%" height={300}>
+                                                    <BarChart data={truePositiveData.byCategory}>
+                                                        <CartesianGrid strokeDasharray="3 3" />
+                                                        <XAxis dataKey="category" angle={-30} textAnchor="end" height={100} />
+                                                        <YAxis />
+                                                        <Tooltip />
+                                                        <Bar dataKey="count" fill={COLORS.success} />
+                                                    </BarChart>
+                                                </ResponsiveContainer>
+                                            </div>
+                                            <div>
+                                                <h4 className="font-semibold text-gray-900 mb-3">By Confidence</h4>
+                                                <ResponsiveContainer width="100%" height={300}>
+                                                    <PieChart>
+                                                        <Pie data={truePositiveData.byConfidence} cx="50%" cy="50%"
+                                                            label={({ range, percentage }) => `${range}: ${percentage}`}
+                                                            outerRadius={100} dataKey="count">
+                                                            {truePositiveData.byConfidence.map((entry, idx) => (
+                                                                <Cell key={idx} fill={['#10b981', '#34d399', '#6ee7b7', '#a7f3d0', '#d1fae5'][idx]} />
+                                                            ))}
+                                                        </Pie>
+                                                        <Tooltip />
+                                                    </PieChart>
+                                                </ResponsiveContainer>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+
+                        <div className="bg-white rounded-lg shadow p-6">
+                            <h3 className="text-lg font-semibold text-gray-900 mb-4">Executive Summary</h3>
+                            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                                <div className="font-medium text-red-900 mb-2">⚠️ Recommendation: Do Not Scale</div>
+                                <div className="text-sm text-red-800">
+                                    Given the 6.5% precision rate and 47.7% false positive rate, this model requires significant improvement before production deployment.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        // Hide loading, render dashboard
+        document.getElementById('loading').style.display = 'none';
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<AIPilotDashboard />);
+    </script>
+</body>
+</html>
