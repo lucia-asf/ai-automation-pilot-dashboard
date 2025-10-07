@@ -4,12 +4,12 @@
 **Version:** 1.0  
 **Author:** Lucia 
 **Contributors:** FST Team (Stacie, Amy, Andrew)  
-**Reviewed By:** [Manager Name]  
+**Reviewed By:**   
 **Next Review:** November 3, 2025 (after Phase 3b completion)
 
 **Distribution:**
 - FST Team
-- Data & Insights Team
+- Insights Team
 - Confluence: [Link to doc](https://sportsfoundation.atlassian.net/wiki/spaces/ARAI/pages/2511372379/Fundraising+campaign+screening+automation?focusedCommentId=2517106704)
 
 **Related Documents# OpenAI Campaign Automation Pilot Documentation
@@ -55,7 +55,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 | **Phase 3a: Full Moderation v1** | Sep 5 - Oct 3 | ✅ Complete | AI classification with sentiment analysis, full results analyzed |
 | **Phase 3b: Full Moderation v2** | Oct 3 - Nov 3 | 🔄 In Progress | Refined thresholds, reduced false positives (results pending) |
 
-**Note:** Projects were not reviewed by the automated system before August 26, 2025 due to initial setup delays.
+**Note:** Projects were not reviewed by the automated system before August 26, 2025 due to API issues.
 
 ### Scope
 
@@ -77,7 +77,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 
 ### Expected Benefits
 - Reduce time spent manually reviewing compliant projects
-- Prioritize review of potentially non-compliant projects
+- Prioritise review of potentially non-compliant projects
 - Scale moderation capacity as ASF grows
 - Maintain consistent policy enforcement
 
@@ -195,13 +195,14 @@ To create an automated workflow using AI to support the FST team in moderating p
 #### Quantitative Results
 
 **Volume Metrics:**
+Skewed due to migration projects.
 - **Total projects created:** 688 (across 38 days)
 - **Total tickets flagged:** 453 (65.8% flagging rate)
 - **Average projects per day:** 18.1
 - **Average tickets per day:** 14.2
 - **Peak days:** Sep 17 (188 projects), Sep 29 (214 projects) - due to migration
 
-**Performance Metrics:**
+**Performance Metrics (as of Oct 2, 2025):**
 | Metric | Count | Percentage |
 |--------|-------|------------|
 | **True Positives** (In Progress → Done) | 15 | 3.3% of total projects |
@@ -233,7 +234,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 
 **Time Savings:**
 - **Manual review time saved:** Estimated XX hours/week by auto-clearing compliant projects
-- **However:** High false positive rate (216 cases) created ~18 hours of unnecessary review
+- **However:** High false positive rate (216 cases) created ~XX hours of unnecessary review
 - **Net impact:** Negative time savings in Phase 3a due to over-flagging
 
 #### AI Classification Performance
@@ -313,13 +314,13 @@ To create an automated workflow using AI to support the FST team in moderating p
 **Before Automation (Manual Review):**
 - All projects manually reviewed by FST team
 - Estimated X-X minutes per project review
-- ~XX hours/month for 688 projects (assumed 10 min/project)
+- ~XX hours/month for 688 projects (assumed X min/project)
 
 **Phase 3a (Automated + Manual Review):**
 - 235 projects not flagged (34.2%) - saved ~XX hours
 - 453 projects flagged requiring review
 - 216 false positives = unnecessary ~XX hours
-- **Net result:** Minimal time savings, potential time loss
+- **Net result:** Minimal/no time savings
 
 ---
 
@@ -367,7 +368,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 - **Issue:** Model most confident on false positives, least confident on true violations
 - **Evidence:** 0% of true positives had >0.9 confidence
 - **Impact:** Cannot rely on confidence scores for prioritization
-- **Resolution:** Under investigation; may require model retraining or alternative API
+- **Resolution:** Under investigation; requires model retraining
 
 **3. Bulk Import Processing Delay**
 - **Issue:** Large project imports (188, 214 projects) processed next day
@@ -392,7 +393,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 - **Impact:** Extended testing period
 - **Learning:** Expect 2-3 threshold iterations for any new AI system
 
-### AI-Specific Limitations
+### AI-Specific Limitations (v1)
 
 **1. Context Understanding**
 - **Issue:** AI struggles to distinguish legitimate fundraising from policy violations
@@ -519,7 +520,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 **GitHub Actions:**
 - **Schedule:** Daily at 11:00 AM AEDT
 - **Runtime:** <2 minutes for typical daily volume
-- **Logs:** Full execution logs retained for 90 days
+<!-- - **Logs:** Full execution logs retained for 90 days -->
 - **Notifications:** Email alert on script failure
 
 ### Performance Benchmarks
@@ -547,7 +548,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 | OpenAI API | **$0.19** (actual) | **$0.20** | **$2.48** |
 | GitHub Actions | $0 (free tier) | $0 | $0 |
 | Development Time | XX hours| N/A | One-time |
-| **Total Phase 3a** | **$3,000.19** | **$0.20/month** | **$2.48/year recurring** |
+| **Total Phase 3a** | **$XX** | **$0.20/month** | **$2.48/year recurring** |
 
 **Key Cost Findings:**
 - **90% cheaper than estimated:** Actual $0.19 vs estimated $1.81
@@ -562,7 +563,6 @@ To create an automated workflow using AI to support the FST team in moderating p
 | 2x volume (1,376 projects/month) | $4.95 | ✅ Yes ($0.41/month) |
 | 5x volume (3,440 projects/month) | $12.38 | ✅ Yes ($1.03/month) |
 | 10x volume (6,880 projects/month) | $24.77 | ✅ Yes ($2.06/month) |
-| 50x volume (34,400 projects/month) | $123.86 | ✅ Yes ($10.32/month) |
 
 **Benefits (Projected after Phase 3b optimization):**
 - **Time savings:** XX hours/month (assuming 20% precision improvement)
@@ -585,11 +585,11 @@ To create an automated workflow using AI to support the FST team in moderating p
 - **OpenAI spend:** **$0.20/month** (actual Phase 3a usage)
 - **Total operational cost:** $0.20/month
 
-**If Scaled to Production:**
-- **Staff:** Same 3 FTE reviewers
-- **Review time:** Estimated X-X hours/week (40% reduction goal)
+**If Pilot is Successful:**
+- **Staff:** Same 3 reviewers
+- **Review time:** Estimated X-X hours/week (XX% reduction goal)
 - **OpenAI spend:** $0.20-0.25/month
-- **Monitoring:** 2 hours/month for threshold tuning
+- **Monitoring:** X hours/month for threshold tuning
 - **Total operational cost:** <$0.50/month
 
 ### Scalability Considerations
@@ -600,7 +600,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 - Cost per project: $0.0004
 
 **Projected Growth:**
-- ASF expects 50-100 projects/day in 2026
+- ASF expects X-X projects/day in 2026
 - Current infrastructure can scale to 300x volume within budget
 - At 100 projects/day: ~$0.60/month cost
 - At 500 projects/day: ~$3.00/month cost
@@ -631,7 +631,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 - Net time savings >X hours/month
 
 ⚠️ **Additional Iteration Needed if:**
-- Precision >25%%
+- Precision <40%%
 - FST team identifies specific threshold adjustments
 - Cost remains <$5/month
 
@@ -642,7 +642,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 | Milestone | Date | Activities |
 |-----------|------|------------|
 | Phase 3b Results | Nov 3, 2025 | Analyze 1 month of data with new thresholds |
-| Go/No-Go Decision | Nov 10, 2025 | Review results with stakeholders |
+| Next Steps | Nov 10, 2025 | Review results with stakeholders |
 | Production Prep | Nov 11-24 | Documentation, training, monitoring setup |
 | Full Rollout | Dec 1, 2025 | Switch to production mode |
 | 30-Day Review | Jan 1, 2026 | Assess production performance |
@@ -656,7 +656,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 
 **Human:**
 - ✅ 3 FST reviewers (current team adequate)
-- ⚠️ Designate 1 "AI Champion" for threshold monitoring (2 hrs/month)
+- ⚠️ Designate 1 "AI Champion" for threshold monitoring (X hrs/month)
 - ⚠️ Brief training session for any new FST team members
 
 **Budget:**
@@ -672,13 +672,13 @@ To create an automated workflow using AI to support the FST team in moderating p
 **✅ Proceed with Phase 3b as planned**, then make final decision in November 2025 based on:
 
 1. **If precision >40% in Phase 3b:** Deploy to production in December with monthly monitoring
-2. **If precision >20%:** Run Phase 3c with further refinements for 1 more month
+2. **If precision <40%:** Run Phase 3c with further refinements for 1 more month
 
 **Confidence Level:** Moderate (70%)
 - Threshold adjustments show promise
 - Cost is negligible ($22/year)
 - FST team willing to continue testing
-- Main risk: Model limitations may be fundamental rather than threshold-related
+<!-- - Main risk: Model limitations may be fundamental rather than threshold-related -->
 
 ---
 
