@@ -3,8 +3,8 @@
 
 **Version:** 1.0  
 **Author:** Lucia  
-**Contributors:** FST Team (Stacie, Amy, Andrew)
-**Reviewed By:**   
+**Contributors:** FST Team (Stacie, Amy, Andrew)   
+**Reviewed:**   
 **Next Review:** November 3, 2025 (after Phase 3b completion)
 
 **Distribution:**
@@ -13,7 +13,7 @@
 - Confluence: [Link to doc](https://sportsfoundation.atlassian.net/wiki/spaces/ARAI/pages/2511372379/Fundraising+campaign+screening+automation?focusedCommentId=2517106704)
 
 **Related Documents**
-# OpenAI Campaign Automation Pilot Documentation
+## OpenAI Campaign Automation Pilot Documentation
 
 **Project:** FST Fundraiser Review Board (FRB) AI Moderation  
 **Period:** May 1 - November 3, 2025  
