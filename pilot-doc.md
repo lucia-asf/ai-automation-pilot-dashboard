@@ -26,13 +26,15 @@
 The FST team requires an automated workflow to support fundraising campaign and page content moderation. As the Australian Sports Foundation continues to scale, human-based content moderation alone cannot meet safety, regulatory, and operational needs. This pilot demonstrates that AI-powered content moderation using OpenAI's API can help the FST team reclaim time currently spent on manual review.
 
 **Phase 3a Results (Sep 5 - Oct 3, 2025):**
-- **688 projects created** during pilot period
-- **453 projects flagged** by AI (65.8% flagging rate)
-- **15 confirmed violations** identified (3.3% true positive rate)
-- **216 false positives** (47.7% of flagged content)
-- **6.5% precision rate** indicates significant over-flagging requiring threshold refinement
+- **688 projects created** during pilot period (286 regular operations + 402 bulk migrations)
+- **455 projects flagged** by AI (66.1% overall flagging rate)
+  - Regular operations: 142 flagged (49.7% rate)
+  - Bulk migrations: 313 flagged (77.9% rate)
+- **20 confirmed violations** identified (4.4% true positive rate)
+- **311 false positives** (68.4% of flagged content)
+- **6.0% overall precision rate** (11.6% for regular operations, 3.2% for bulk migrations)
 
-**Key Finding:** While the AI successfully identified all policy violations, the high false positive rate (47.7%) created unsustainable manual review overhead. Threshold adjustments implemented on October 2, 2025 are being evaluated in Phase 3b.
+**Key Finding:** Regular operations showed better performance (11.6% precision) than bulk migrations (3.2% precision). While the AI successfully identified violations, the high false positive rate created unsustainable review overhead. Threshold adjustments implemented on October 2, 2025 are being evaluated in Phase 3b.
 
 **Recommendation:** Continue to Phase 3b with tightened thresholds. Evaluate for 1 month before deciding on full production deployment.
 
@@ -202,15 +204,15 @@ Skewed due to migration projects.
 - **Average tickets per day:** 14.2
 - **Peak days:** Sep 17 (188 projects), Sep 29 (214 projects) - due to migration
 
-**Performance Metrics (as of Oct 2, 2025):**
-| Metric | Count | Percentage |
-|--------|-------|------------|
-| **True Positives** (In Progress → Done) | 15 | 3.3% of total projects |
-| **False Positives** (Direct to Done) | 216 | 47.7% of flagged |
-| **Currently Under Review** (In Progress) | 39 | 8.6% of flagged |
-| **Awaiting Review** (To Do) | 183 | 40.4% of flagged |
-| **Precision Rate** | 15/231 resolved | **6.5%** |
-| **False Positive Rate** | 216/453 flagged | **47.7%** |
+**Performance Metrics (as of Oct 7, 2025):**
+| Metric | All Projects | Regular Ops | Bulk Migrations |
+|--------|--------------|-------------|-----------------|
+| **True Positives** (In Progress → Done) | 20 | 13 | 7 |
+| **False Positives** (Direct to Done) | 311 | 99 | 212 |
+| **Currently Under Review** (In Progress) | 87 | 24 | 63 |
+| **Awaiting Review** (To Do) | 37 | 6 | 31 |
+| **Precision Rate** | **6.0%** | **11.6%** | **3.2%** |
+| **False Positive Rate** | 94.0% | 88.4% | 96.8% |
 
 
 **Flagging Rate Analysis:**
@@ -236,6 +238,16 @@ Skewed due to migration projects.
 - **Manual review time saved:** Estimated XX hours/week by auto-clearing compliant projects
 - **However:** High false positive rate (216 cases) created ~XX hours of unnecessary review
 - **Net impact:** Negative time savings in Phase 3a due to over-flagging
+
+**Ticket Resolution Workflow (Updated Oct 7):**
+| Flow | All Projects | Regular Ops | Bulk Migrations |
+|------|--------------|-------------|-----------------|
+| Direct to Done (False Positives) | 311 (68.4%) | 99 (69.7%) | 212 (67.7%) |
+| In Progress → Done (True Positives) | 20 (4.4%) | 13 (9.2%) | 7 (2.2%) |
+| Currently In Progress | 87 (19.1%) | 24 (16.9%) | 63 (20.1%) |
+| Still To Do | 37 (8.1%) | 6 (4.2%) | 31 (9.9%) |
+
+
 
 #### AI Classification Performance
 
@@ -624,16 +636,17 @@ Skewed due to migration projects.
 
 **Next Steps:**
 
-✅ **Proceed to Full Production if:**
+✅ **Proceed with version if:**
 - Precision rate >40%
+- Flagging rate <35% (baseline: 49.7%)
 - False positive rate <20%
 - FST team satisfaction score >X/10
 - Net time savings >X hours/month
 
 ⚠️ **Additional Iteration Needed if:**
 - Precision <40%%
+- Flagging rate 35-45%
 - FST team identifies specific threshold adjustments
-- Cost remains <$5/month
 
 ### Proposed Timeline for Next Phase
 
@@ -644,7 +657,6 @@ Skewed due to migration projects.
 | Phase 3b Results | Nov 3, 2025 | Analyze 1 month of data with new thresholds |
 | Next Steps | Nov 10, 2025 | Review results with stakeholders |
 | Production Prep | Nov 11-24 | Documentation, training, monitoring setup |
-| Full Rollout | Dec 1, 2025 | Switch to production mode |
 | 30-Day Review | Jan 1, 2026 | Assess production performance |
 
 ### Resource Needs for Scale
