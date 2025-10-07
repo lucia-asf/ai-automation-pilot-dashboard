@@ -12,7 +12,7 @@
 - Insights Team
 - Confluence: [Link to doc](https://sportsfoundation.atlassian.net/wiki/spaces/ARAI/pages/2511372379/Fundraising+campaign+screening+automation?focusedCommentId=2517106704)
 
-### OpenAI Campaign Automation Pilot Documentation
+## OpenAI Campaign Automation Pilot Documentation
 
 **Project:** FST Fundraiser Review Board (FRB) AI Moderation  
 **Period:** May 1 - November 3, 2025  
