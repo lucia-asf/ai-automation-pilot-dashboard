@@ -2,8 +2,8 @@
 ## Document Control
 
 **Version:** 1.0  
-**Author:** Lucia
-**Contributors:** FST Team (Stacie, Amy, Andrew)  
+**Author:** Lucia  
+**Contributors:** FST Team (Stacie, Amy, Andrew)
 **Reviewed By:**   
 **Next Review:** November 3, 2025 (after Phase 3b completion)
 
@@ -12,7 +12,7 @@
 - Insights Team
 - Confluence: [Link to doc](https://sportsfoundation.atlassian.net/wiki/spaces/ARAI/pages/2511372379/Fundraising+campaign+screening+automation?focusedCommentId=2517106704)
 
-**Related Documents
+**Related Documents**
 # OpenAI Campaign Automation Pilot Documentation
 
 **Project:** FST Fundraiser Review Board (FRB) AI Moderation  
