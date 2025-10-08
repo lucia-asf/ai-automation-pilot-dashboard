@@ -1282,90 +1282,20 @@ The OpenAI Campaign Automation Pilot has successfully demonstrated that AI-power
 - ✅ Proven scalability (300x headroom within budget)
 - ✅ Valuable insights into regular operations vs bulk migration performance
 
-**Critical Next Step:**
+**Next Step:**
 Phase 3b (Oct 3 - Nov 3, 2025) will determine whether threshold adjustments can reduce false positives to acceptable levels. **Regular operations metrics (49.7% flagging rate, 11.6% precision) should be the primary evaluation criteria**, as they better represent typical system performance.
 
 **Recommendation:**
+- Continue testing thresholds
+  <!--
 - **If Phase 3b succeeds** (>40% precision, <35% flagging for regular ops): Proceed to production deployment in November 2025
 - **If Phase 3b falls short**: Consider extended iteration (Phase 3c) or hybrid approaches detailed in Alternative Recommendations section
 
 The economic case is compelling: at less than $0.0004 per project and potential for 20+ hours/month in time savings, even modest improvements in precision will deliver substantial ROI. The infrastructure is proven, the technology is reliable, and the path to optimization is clear.
-
+-->
 **Final Note:**
 This pilot represents a significant step toward scalable, AI-assisted content moderation at ASF. Success requires continued collaboration between technical implementation (Insights) and domain expertise (FST) to refine thresholds and maintain policy alignment. With the right calibration, this system can help ASF scale its fundraising operations while maintaining the highest standards of compliance and safety.
 
----
-
-## Appendix H: Visual Performance Dashboard
-
-**Phase 3a Performance Summary (Sep 5 - Oct 3, 2025):**
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     PROJECTS OVERVIEW                       │
-├─────────────────────────────────────────────────────────────┤
-│  Total Projects:        688                                 │
-│  Regular Operations:    286 (42%)  ███████████▓░░░░░░░░░░  │
-│  Bulk Migrations:       402 (58%)  ████████████████▓░░░░░  │
-└─────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────┐
-│                    FLAGGING BREAKDOWN                       │
-├─────────────────────────────────────────────────────────────┤
-│  Overall Flagging Rate:        66.1%                        │
-│  ████████████████████████████████████▓░░░░░░░░░░░░░░░░░░░  │
-│                                                             │
-│  Regular Ops Flagging:         49.7%                        │
-│  ██████████████████████████▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░  │
-│                                                             │
-│  Bulk Migration Flagging:      77.9%                        │
-│  ███████████████████████████████████████████▓░░░░░░░░░░░░  │
-└─────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────┐
-│                 PRECISION COMPARISON                        │
-├─────────────────────────────────────────────────────────────┤
-│  Target:       40%  ████████████████████████░░░░░░░░░░░░░  │
-│  Industry:     50%  ██████████████████████████████░░░░░░░  │
-│  Regular Ops:  11.6% ██████▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░  │
-│  Overall:       6.0% ████▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  │
-│  Bulk Imports:  3.2% ██▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  │
-└─────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────┐
-│              RESOLVED TICKETS BREAKDOWN                     │
-├─────────────────────────────────────────────────────────────┤
-│  Total Resolved: 331 tickets (72.7% of flagged)             │
-│                                                             │
-│  True Positives:    20 (6.0%)   ████▓░░░░░░░░░░░░░░░░░░░  │
-│  False Positives:  311 (94.0%)  ██████████████████████████ │
-└─────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────┐
-│                  COST EFFICIENCY                            │
-├─────────────────────────────────────────────────────────────┤
-│  Budget Allocated:    $120.00/month                         │
-│  Actual Usage:          $0.19 (Phase 3a total)              │
-│  Budget Used:           0.18%                               │
-│  ▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  │
-│                                                             │
-│  Cost per Project:      $0.0004                             │
-│  Headroom:              300x current volume                 │
-└─────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────┐
-│           TOP VIOLATION CATEGORIES DETECTED                 │
-├─────────────────────────────────────────────────────────────┤
-│  Inducement:          404  ████████████████████████▓░░░░░  │
-│  Membership/Fees:     377  ███████████████████████▓░░░░░░  │
-│  Ticketing:           359  ██████████████████████▓░░░░░░░  │
-│  Sponsorship:         357  ██████████████████████▓░░░░░░░  │
-│  Advertising:         345  █████████████████████▓░░░░░░░░  │
-│  Personal Contact:    328  ████████████████████▓░░░░░░░░░  │
-│  Gambling:              9  █▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░  │
-│  Alcohol:               1  ▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  │
-└─────────────────────────────────────────────────────────────┘
-```
 
 ---
 
