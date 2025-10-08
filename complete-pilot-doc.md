@@ -775,7 +775,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 - Predictive risk scoring for campaigns
 -->
 ---
-
+<!--
 ## Risk Assessment & Mitigation
 
 ### Current Risks
@@ -825,7 +825,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 2. **Bias testing:** Regular checks for category or content bias
 3. **Documentation:** All threshold changes logged with rationale
 4. **Stakeholder review:** FST team reviews major changes
-
+-->
 ---
 
 ## Governance & Ongoing Management
