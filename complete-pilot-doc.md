@@ -711,7 +711,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 
 **Next Steps:**
 
-✅ **Proceed to Full Production if (Regular Operations Metrics):**
+✅ **Proceed if (Regular Operations Metrics):**
 - Flagging rate <35% (baseline: 49.7%)
 - Precision rate >40% (baseline: 11.6%)
 - False positive rate <30% (baseline: 69.7%)
@@ -722,7 +722,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 - Precision <40%
 - FST team identifies specific threshold adjustments
 - Cost remains <$5/month
-
+<!--
 ### Proposed Timeline for Next Phase
 
 **Phase 4: Production Deployment (If Phase 3b Successful)**
@@ -741,10 +741,10 @@ Given that migrations were outside the original pilot scope and represent atypic
 - <35% flagging rate sustained
 - Zero critical false negatives (maintain 100% recall)
 - Positive FST team feedback
-- Net time savings >5 hours/month
-
+- Net time savings >X hours/month
+-->
 ---
-
+<!--
 ## Alternative Recommendations
 
 ### If Phase 3b Does Not Meet Targets
@@ -776,30 +776,18 @@ Given that migrations were outside the original pilot scope and represent atypic
 - **Advantage:** FST team gets context without false positive overhead
 - **Trade-off:** Less automation benefit
 
+
 ### If Phase 3b Succeeds
 
 **Enhancement Roadmap (2026):**
 
-**Q1 2026:**
 - Real-time moderation (vs current D-1 batch processing)
-- Automated low-confidence clearing (if confidence calibration improves)
 - Enhanced reporting dashboard
-
-**Q2 2026:**
-- Image moderation pilot using OpenAI Vision API
-- Integration with donation page content (in addition to campaigns)
-- A/B testing of alternative AI models (Claude, Gemini)
-
-**Q3 2026:**
-- Automated compliance reporting
+- Image moderation using OpenAI Vision API
 - Historical data analysis for policy trend insights
 - Custom model fine-tuning on ASF-specific policies
-
-**Q4 2026:**
-- Video content moderation exploration
 - Predictive risk scoring for campaigns
-- Integration with external compliance databases
-
+-->
 ---
 
 ## Risk Assessment & Mitigation
@@ -819,7 +807,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 
 | Risk | Impact | Likelihood | Mitigation |
 |------|--------|------------|------------|
-| **Threshold tuning burden** | Medium | Medium | Document optimization process; train backup staff |
+| **Threshold tuning burden** | Medium | Medium | Document optimization process |
 | **Team resistance to AI** | Medium | Low | Transparent reporting; involve team in threshold decisions |
 | **Policy changes requiring retraining** | Medium | Medium | Quarterly model reviews; maintain flexible threshold system |
 | **Bulk import processing delays** | Low | Medium | Set expectations; D-1 processing is by design |
@@ -830,7 +818,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 |------|--------|------------|------------|
 | **GitHub Actions downtime** | Low | Very Low | Manual script execution procedure documented |
 | **Jira integration failure** | Low | Very Low | Email notification backup; error logging |
-| **Data privacy concerns** | Low | Very Low | No PII shared; documented in privacy policy |
+| **Data privacy concerns** | Low | Very Low | No PII shared |
 
 ### Mitigation Strategies
 
@@ -859,13 +847,12 @@ Given that migrations were outside the original pilot scope and represent atypic
 ### Roles & Responsibilities
 
 **Day-to-Day Operations:**
-- **FST Team (Amy, Stacie, Andrew):** Review flagged content; dismiss false positives; escalate policy questions
+- **FST Team (Amy, Stacie, Andrew):** Review flagged content; dismiss false positives; escalate questions
 - **Script Owner (Lucia/Insights):** Monitor daily execution; investigate script failures; coordinate with OpenAI on API issues
 
 **Strategic Oversight:**
-- **FST Lead (Stacie):** Monthly performance review; approve threshold changes; provide policy guidance
-- **Insights Team Lead:** Quarterly business review; budget management; roadmap prioritization
-- **Privacy Officer:** Annual compliance audit; data handling review
+- **FST Team (Stacie):** Monthly performance review; approve threshold changes; provide policy guidance
+- **Insights Team:** Quarterly business review; budget management; roadmap prioritization
 
 ### Performance Monitoring
 
@@ -907,18 +894,18 @@ Given that migrations were outside the original pilot scope and represent atypic
 1. **Analysis:** Review false positive patterns over 2-4 weeks
 2. **Proposal:** Document proposed threshold changes with expected impact
 3. **Testing:** Simulate changes on historical data
-4. **Approval:** FST Lead + Insights Lead sign-off
+4. **Approval:** sign-off
 5. **Implementation:** Deploy change with monitoring plan
 6. **Validation:** 2-week assessment period
 7. **Documentation:** Update Confluence with changes and rationale
 
 **Threshold Change Log:**
 - All changes documented in Confluence
-- Include: Date, categories affected, old/new thresholds, rationale, approver
+- Include: Date, categories affected, old/new thresholds, rationale
 - Accessible to FST team and Insights team
 
 ---
-
+<!--
 ## Knowledge Transfer & Documentation
 
 ### Documentation Repository
@@ -928,9 +915,6 @@ Given that migrations were outside the original pilot scope and represent atypic
 **Documentation Set:**
 1. **This document:** Complete pilot results and recommendations
 2. **Technical runbook:** Script execution, troubleshooting, API management
-3. **User guide:** FST team procedures for reviewing flagged content
-4. **Threshold tuning guide:** How to analyze and adjust thresholds
-5. **Privacy & compliance:** Data handling procedures and audit requirements
 
 ### Training & Handover
 
@@ -954,7 +938,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 - **Days 31-90:** Weekly check-ins
 - **After 90 days:** Monthly reviews + on-demand support
 - **Slack channel:** #ai-moderation-support for questions
-
+-->
 ---
 
 ## Success Stories & Use Cases
@@ -979,19 +963,13 @@ Given that migrations were outside the original pilot scope and represent atypic
 
 ### Notable Cases
 
-**Case Study 1: Raffle Detection**
-- **Scenario:** Project offered prize draw for donations over $50
-- **AI Detection:** Flagged as Inducement (0.82 confidence) + Gambling (0.67 confidence)
-- **Outcome:** Confirmed violation; project owner contacted to remove raffle
-- **Value:** Would likely have been missed in manual review of 214 projects that day
-
-**Case Study 2: Membership Fee Collection**
+**Case Study 1: Membership Fee Collection**
 - **Scenario:** Sports club using ASF to collect annual membership dues
 - **AI Detection:** Flagged as Membership/Fees (0.78 confidence)
 - **Outcome:** Confirmed violation; club redirected to proper membership platform
 - **Value:** Prevented policy breach and potential compliance issues
 
-**Case Study 3: Bulk Import Processing**
+**Case Study 2: Bulk Import Processing**
 - **Scenario:** 214 historical projects migrated on Sep 29
 - **AI Processing:** All projects analyzed within 24 hours
 - **Outcome:** 7 violations found in historical data; 212 false positives cleared
@@ -1034,42 +1012,6 @@ Given that migrations were outside the original pilot scope and represent atypic
 - ❌ **Precision:** Below industry standard (needs Phase 3b improvement)
 - ✅ **Scalability:** Comparable to major platforms
 
-### Alternative Solutions Considered
-
-**Option 1: Manual Review Only (Status Quo)**
-- **Cost:** $0 technology, ~$XX,XXX annual labor cost
-- **Scalability:** Limited to current team capacity
-- **Consistency:** Varies by reviewer
-- **Decision:** Not sustainable for ASF growth trajectory
-
-**Option 2: Third-Party Moderation Service**
-- **Examples:** Besedo, Checkstep, TaskUs
-- **Cost:** $0.50-2.00 per item reviewed
-- **Pros:** Proven systems, 24/7 coverage, compliance expertise
-- **Cons:** 1000x+ more expensive, lacks ASF policy context, slower
-- **Decision:** Cost prohibitive at scale
-
-**Option 3: Custom ML Model**
-- **Approach:** Train proprietary model on ASF data
-- **Cost:** $50K-150K development + ongoing maintenance
-- **Pros:** ASF-specific training, full control
-- **Cons:** Requires ML expertise, large labeled dataset, longer timeline
-- **Decision:** Premature at current volumes; revisit at 10,000+ projects/month
-
-**Option 4: Hybrid Human + AI (Selected Approach)**
-- **Approach:** OpenAI API for flagging + human review
-- **Cost:** $0.0004 per item + existing labor
-- **Pros:** Low cost, fast implementation, leverages existing team, scalable
-- **Cons:** Requires threshold tuning, depends on external API
-- **Decision:** Best fit for ASF's current needs and constraints
-
-**Rationale for Selection:**
-- Lowest implementation risk and cost
-- Fastest time-to-value (3 months vs 12+ for custom)
-- Scalable within budget to 100x current volume
-- Maintains human oversight for policy judgment
-- Proven technology stack used by major platforms
-
 ---
 
 ## Appendices
@@ -1103,7 +1045,7 @@ Given that migrations were outside the original pilot scope and represent atypic
          │                │        │                 │       │                 │
          │ - Moderation   │        │ - Create Issue  │       │ - Execution log │
          │ - Categories   │        │ - Add Evidence  │       │ - Error traces  │
-         │ - Confidence   │        │ - Set Priority  │       │ - API responses │
+         │ - Confidence   │        │                 │        │ - API responses │
          └────────────────┘        └─────────────────┘       └─────────────────┘
                   │                          │
                   │                          ▼
@@ -1278,7 +1220,6 @@ ROI: ($8,439.72 - $2.28) / $2.28 × 100 = 370,000%
 - ❌ Date of birth
 - ❌ Gender
 - ❌ Payment information
-- ❌ Salesforce record IDs
 - ❌ Club officer contact details
 
 **Data Shared with OpenAI (Content Only):**
@@ -1297,14 +1238,12 @@ ROI: ($8,439.72 - $2.28) / $2.28 × 100 = 370,000%
 **Audit Trail:**
 - All API requests logged (without content) in GitHub Actions
 - 90-day retention of execution logs
-- Privacy officer can audit on request
 
 **User Consent:**
 - Project creators consent to public content moderation via Terms of Service
 - No additional consent required for AI analysis of public content
 
-**GDPR/Privacy Act Compliance:**
-- No EU citizen data processed
+**Privacy Act Compliance:**
 - Australian Privacy Act 1988 compliance confirmed
 - No cross-border data issues (OpenAI uses Australian AWS region where available)
 
@@ -1329,7 +1268,7 @@ ROI: ($8,439.72 - $2.28) / $2.28 × 100 = 370,000%
 - **Flagging Rate:** Percentage of projects that trigger AI flags
 
 **ASF Terms:**
-- **FST:** Fundraising Services Team
+- **FST:** Fundraising Support Team
 - **FRB:** Fundraiser Review Board
 - **ASF:** Australian Sports Foundation
 - **Campaign:** Fundraising project on ASF platform
@@ -1344,143 +1283,6 @@ ROI: ($8,439.72 - $2.28) / $2.28 × 100 = 370,000%
 
 ---
 
-### Appendix F: References & Resources
-
-**Internal Documentation:**
-- [Confluence: Fundraising Campaign Screening Automation](https://sportsfoundation.atlassian.net/wiki/spaces/ARAI/pages/2511372379/)
-- ASF Fundraising Policy Guidelines (internal)
-- FST Team Procedures Manual
-- Privacy and Data Handling Policy
-
-**External Resources:**
-- [OpenAI Moderation API Documentation](https://platform.openai.com/docs/guides/moderation)
-- [OpenAI Pricing](https://openai.com/pricing)
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- Australian Privacy Principles (Office of the Australian Information Commissioner)
-
-**Industry Best Practices:**
-- Trust & Safety Professional Association resources
-- Content Moderation at Scale (white papers)
-- AI Ethics Guidelines for Automated Decision-Making
-
-**Academic Research:**
-- "Automated Content Moderation: A Survey" (ArXiv 2023)
-- "Bias in Automated Content Moderation Systems" (FAT* Conference)
-- "Human-AI Collaboration in Content Moderation" (CHI 2024)
-
-**Competitive Analysis:**
-- GoFundMe Trust & Safety approach
-- Kickstarter content moderation practices
-- JustGiving fraud prevention systems
-
----
-
-### Appendix G: FAQ
-
-**For FST Team:**
-
-**Q: How do I know if a flag is accurate?**
-A: Review the evidence in the Jira ticket. Look for specific language that matches policy violations. When in doubt, escalate to Stacie or discuss in team meeting.
-
-**Q: Can I override the AI's decision?**
-A: Yes. Mark the ticket as "Done" if it's a false positive. The AI provides recommendations, not final decisions.
-
-**Q: What if I disagree with a category label?**
-A: The category is less important than whether there's any policy violation. If there's no violation, dismiss regardless of category.
-
-**Q: How quickly should I review flagged tickets?**
-A: Target 48-72 hours for most tickets. High severity should be reviewed within 24 hours.
-
-**Q: What if the AI misses a violation?**
-A: Report it via Slack #ai-moderation-support. We track false negatives to improve the system.
-
-**For Technical Team:**
-
-**Q: What happens if OpenAI API is down?**
-A: Script will retry 3 times, then log an error. Projects will be analyzed the next day. No data is lost.
-
-**Q: Can we process projects in real-time instead of D-1?**
-A: Technically yes, but D-1 allows batch processing efficiency. Real-time is Phase 4 enhancement.
-
-**Q: How do we adjust thresholds?**
-A: Follow the Threshold Adjustment Process in the governance section. Requires FST Lead approval.
-
-**Q: What if costs suddenly spike?**
-A: Budget alerts are set at $5, $10, $20. Current usage is 0.18% of budget, so spikes are unlikely. Investigate API call volume if alert triggers.
-
-**Q: Can we use a different AI model?**
-A: Yes, but requires code changes. Claude and Gemini are alternatives. OpenAI Moderation API is purpose-built for this use case.
-
-**For Leadership:**
-
-**Q: What's the business case for continuing?**
-A: At $0.19/month cost and potential 20+ hours/month savings, ROI is extremely high if Phase 3b meets targets.
-
-**Q: What are the risks of full deployment?**
-A: Primary risk is false negatives (missed violations). Mitigated by maintaining human review and quarterly audits.
-
-**Q: How does this scale with ASF growth?**
-A: Linear cost scaling. Can handle 300x current volume within existing budget. No infrastructure changes needed.
-
-**Q: What if policy guidelines change?**
-A: Thresholds can be adjusted within 1-2 weeks. Major policy changes may require 4-6 weeks for recalibration.
-
----
-
-## Document Revision History
-
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 0.1 | May 15, 2025 | Lucia | Initial draft - Phase 1 setup documentation |
-| 0.2 | June 10, 2025 | Lucia | Added Phase 2 simple moderation results |
-| 0.3 | July 20, 2025 | Lucia | Updated timeline due to API delays |
-| 0.4 | Sep 10, 2025 | Lucia | Phase 3a launch documentation |
-| 0.5 | Sep 25, 2025 | Lucia | Added preliminary Phase 3a metrics |
-| 0.6 | Oct 5, 2025 | Lucia | Complete Phase 3a analysis added |
-| 0.7 | Oct 6, 2025 | Lucia | Added regular ops vs bulk migration analysis |
-| 0.8 | Oct 7, 2025 | Lucia | Final Phase 3a results and recommendations |
-| 1.0 | Oct 8, 2025 | Lucia | Complete pilot documentation with all appendices |
-| 1.1 | Oct 8, 2025 | Lucia | Added FAQ, glossary, and technical specifications |
-
----
-
-## Acknowledgments
-
-**Project Team:**
-- **Lucia** - Project lead, technical implementation, analysis
-- **Stacie Brand** - FST Lead, policy guidance, user testing
-- **Amy Bracher** - FST reviewer, feedback and validation
-- **Andrew Merritt** - FST reviewer, threshold recommendations
-
-**Contributors:**
-- Insights Team - Strategic oversight and budget approval
-- Privacy Officer - Data handling compliance review
-- IT Security - API security review and approval
-
-**Special Thanks:**
-- OpenAI Support team for API troubleshooting assistance
-- FST team for patience during high false positive period
-- Insights leadership for supporting iterative approach
-
----
-
-## Contact Information
-
-**For Questions About This Document:**
-- **Primary Contact:** Lucia (Insights Team)
-- **Email:** [Contact via Confluence]
-- **Slack:** #ai-moderation-pilot
-
-**For Operational Issues:**
-- **FST Lead:** Stacie Brand
-- **Technical Support:** Insights Team via #ai-moderation-support
-- **Urgent Issues:** Escalate to Insights Team Lead
-
-**For Policy Questions:**
-- **Primary:** Stacie Brand (FST Lead)
-- **Escalation:** Compliance Team
-
----
 
 ## Conclusion
 
