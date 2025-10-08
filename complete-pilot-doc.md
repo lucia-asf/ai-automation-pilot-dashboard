@@ -5,7 +5,7 @@
 **Next Review:** November 3, 2025 (after Phase 3b completion)
 
 **Distribution:**
-- FST Team
+- AI Working Group
 - Insights Team
 - Confluence: [Link to doc](https://sportsfoundation.atlassian.net/wiki/spaces/ARAI/pages/2511372379/Fundraising+campaign+screening+automation?focusedCommentId=2517106704)
 
@@ -14,7 +14,7 @@
 **Project:** FST Fundraiser Review Board (FRB) AI Moderation  
 **Period:** May 1 - November 3, 2025  
 **Status:** Phase 3a Complete | Phase 3b In Progress  
-**Last Updated:** October 8, 2025
+**Last Updated:** October 7, 2025
 
 ---
 
