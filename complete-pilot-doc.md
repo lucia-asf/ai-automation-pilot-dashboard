@@ -72,7 +72,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 - Automated project approval/rejection (human review required)
 
 ### Users
-- **Primary:** FST team (Stacie Brand, Amy Bracher, Andrew Merritt)
+- **Primary:** FST team (Stacie, Amy, Andrew)
 
 ### Expected Benefits
 - Reduce time spent manually reviewing compliant projects
