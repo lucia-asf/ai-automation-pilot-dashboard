@@ -2,8 +2,6 @@
 
 **Version:** 1.1  
 **Author:** Lucia  
-**Contributors:** FST Team (Stacie, Amy, Andrew)   
-**Reviewed:**   
 **Next Review:** November 3, 2025 (after Phase 3b completion)
 
 **Distribution:**
