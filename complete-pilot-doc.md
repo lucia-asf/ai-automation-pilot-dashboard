@@ -1287,7 +1287,7 @@ Phase 3b (Oct 3 - Nov 3, 2025) will determine whether threshold adjustments can 
 
 **Recommendation:**
 - Continue testing thresholds
-  <!--
+<!--
 - **If Phase 3b succeeds** (>40% precision, <35% flagging for regular ops): Proceed to production deployment in November 2025
 - **If Phase 3b falls short**: Consider extended iteration (Phase 3c) or hybrid approaches detailed in Alternative Recommendations section
 
