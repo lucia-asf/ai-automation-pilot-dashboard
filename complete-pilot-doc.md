@@ -40,7 +40,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 |-------|--------|--------|----------------|
 | **Phase 1: Setup** | May 1 - June 3 | ✅ Complete | Infrastructure setup, API integration, initial testing |
 | **Phase 2: Simple Moderation** | June 3 - Sep 5 | ✅ Complete | Keyword flagging, basic automation, GitHub Actions setup |
-| **Phase 3a: Full Moderation v1** | Sep 5 - Oct 3 | ✅ Complete | AI classification with sentiment analysis, full results analyzed |
+| **Phase 3a: Full Moderation v1** | Sep 5 - Oct 3 | ✅ Complete | AI classification with sentiment analysis, full results analysed |
 | **Phase 3b: Full Moderation v2** | Oct 3 - Nov 3 | 🔄 In Progress | Refined thresholds, reduced false positives (results pending) |
 
 **Note:** Projects were not reviewed by the automated system before August 26, 2025 due to API issues.
@@ -97,7 +97,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 - ❌ Gender, Age, Date of Birth
 - ❌ Phone numbers
 
-**Only Content Data Analyzed:**
+**Only Content Data Analysed:**
 - ✅ Project story/summary
 - ✅ Messages of support
 - ✅ Contributor messages
@@ -122,7 +122,6 @@ To create an automated workflow using AI to support the FST team in moderating p
 - ✅ All policy violations identified (100% recall on confirmed cases)
 - ⚠️ Acceptable false positive rate (<20% target, 68.4% actual)
 - ⚠️ Precision rate (>50% target, 6.0% actual)
-- ✅ Processing time <24 hours for all projects
 
 ---
 
@@ -244,10 +243,10 @@ To create an automated workflow using AI to support the FST team in moderating p
 - Even excluding bulk imports, **49.7% flagging rate remains high**
 - Regular operations precision of 11.6% is still far below industry target (40%+)
 - The threshold calibration problem exists in both contexts, though more pronounced with migrations
-
+<!--
 #### Why Bulk Migrations Performed Differently
 
-**Hypothesized Reasons:**
+**Hypothesised Reasons:**
 1. **Content Age:** Migrated projects may use older fundraising language patterns that differ from current trends
 2. **Formatting Differences:** Historical data may have different structure or formatting that confuses the AI
 3. **Policy Evolution:** Fundraising guidelines may have evolved, making older content appear more ambiguous
@@ -273,7 +272,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 
 #### Recommendation
 
-**Report both metrics, emphasize regular operations:**
+**Report both metrics, emphasise regular operations:**
 
 Given that migrations were outside the original pilot scope and represent atypical content, we recommend:
 
@@ -283,7 +282,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 4. **Future planning:** Develop separate thresholds or processing logic for bulk migrations if they continue
 
 **Rationale:** Regular operations (49.7% flagging, 11.6% precision) better represent typical system performance and provide more realistic targets for improvement. However, excluding bulk imports entirely from reporting would lack transparency and miss valuable learnings about system behavior under load.
-
+-->
 ---
 
 **Flagging Rate Analysis:**
@@ -304,7 +303,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 - **Requests per project:** ~2.1 (indicates some retry/error handling)
 - **GitHub Actions:** 150 minutes/month automation = $0.00 (within free tier)
 - **Total Phase 3a cost:** $0.19 for AI processing
-- **Budget utilization:** 0.18% of $120/month October budget
+- **Budget utilisation:** 0.18% of $120/month October budget
 
 **Time Savings:**
 - **Manual review time saved:** Estimated XX hours/week by auto-clearing compliant projects
@@ -441,7 +440,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 **2. Confidence Score Miscalibration**
 - **Issue:** Model most confident on false positives, least confident on true violations
 - **Evidence:** 0% of true positives had >0.9 confidence
-- **Impact:** Cannot rely on confidence scores for prioritization
+- **Impact:** Cannot rely on confidence scores for prioritisation
 - **Resolution:** Under investigation; requires model retraining
 
 **3. Bulk Import Processing Delay**
@@ -531,7 +530,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 
 **Phase 1 → Phase 2:**
 - Added custom keyword lists at FST team request
-- Expanded fields analyzed (Story, Summary, Messages)
+- Expanded fields analysed (Story, Summary, Messages)
 
 **Phase 2 → Phase 3a:**
 - Implemented sentiment analysis
@@ -601,7 +600,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 
 **Processing Speed:**
 - 688 projects processed over 29 days
-- Average 24 projects/day analyzed
+- Average 24 projects/day analysed
 - <10 minutes total processing time per day
 - Scalable to 100+ projects/day without infrastructure changes
 
@@ -627,7 +626,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 **Key Cost Findings:**
 - **90% cheaper than estimated:** Actual $0.19 vs estimated $1.81
 - **Tokens per project:** 1,526 vs estimated 2,000 (24% lower)
-- **Budget utilization:** Using only 0.18% of $120/month budget
+- **Budget utilisation:** Using only 0.18% of $120/month budget
 - **Scalability headroom:** Can handle **300x current volume** within existing budget
 
 **Cost at Scale:**
@@ -638,7 +637,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 | 5x volume (3,440 projects/month) | $12.38 | ✅ Yes ($1.03/month) |
 | 10x volume (6,880 projects/month) | $24.77 | ✅ Yes ($2.06/month) |
 
-**Benefits (Projected after Phase 3b optimization):**
+**Benefits (Projected after Phase 3b optimisation):**
 - **Time savings:** XX hours/month (assuming 20% precision improvement)
 - **Value:** XX hrs × $XX/hr = $XX/month
 - **Annual value:** $XX
@@ -718,10 +717,10 @@ Given that migrations were outside the original pilot scope and represent atypic
 |-----------|------|------------|
 | Phase 3b Results | Nov 3, 2025 | Complete analysis of refined thresholds; prepare recommendation report |
 | Decision Point | Nov 10, 2025 | FST team + Insights team review; Go/No-go decision for production |
-| Production Prep | Nov 11-17, 2025 | Documentation finalization; handover procedures; training materials |
+| Production Prep | Nov 11-17, 2025 | Documentation finalisation; handover procedures; training materials |
 | Production Launch | Nov 18, 2025 | Enable production mode; monitor for 2 weeks |
 | First Review | Dec 2, 2025 | Assess first 2 weeks; minor adjustments if needed |
-| Quarterly Review | Feb 2026 | Full system audit; threshold optimization; annual planning |
+| Quarterly Review | Feb 2026 | Full system audit; threshold optimisation; annual planning |
 
 **Phase 4 Success Criteria:**
 - Maintain >40% precision rate over 30 days
@@ -794,7 +793,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 
 | Risk | Impact | Likelihood | Mitigation |
 |------|--------|------------|------------|
-| **Threshold tuning burden** | Medium | Medium | Document optimization process |
+| **Threshold tuning burden** | Medium | Medium | Document optimisation process |
 | **Team resistance to AI** | Medium | Low | Transparent reporting; involve team in threshold decisions |
 | **Policy changes requiring retraining** | Medium | Medium | Quarterly model reviews; maintain flexible threshold system |
 | **Bulk import processing delays** | Low | Medium | Set expectations; D-1 processing is by design |
@@ -839,7 +838,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 
 **Strategic Oversight:**
 - **FST Team (Stacie):** Monthly performance review; approve threshold changes; provide policy guidance
-- **Insights Team:** Quarterly business review; budget management; roadmap prioritization
+- **Insights Team:** Quarterly business review; budget management; roadmap prioritisation
 
 ### Performance Monitoring
 
@@ -1213,12 +1212,12 @@ ROI: ($8,439.72 - $2.28) / $2.28 × 100 = 370,000%
 **Data Shared with OpenAI (Content Only):**
 - ✅ Project story/description (public-facing)
 - ✅ Project summary (public-facing)
-- ✅ Messages of support (public-facing, anonymized)
-- ✅ Contributor messages (public-facing, anonymized)
+- ✅ Messages of support (public-facing, anonymised)
+- ✅ Contributor messages (public-facing, anonymised)
 
 **Privacy Safeguards:**
-1. **Data Minimization:** Only public-facing content analyzed
-2. **Anonymization:** No identifiable information in API requests
+1. **Data Minimisation:** Only public-facing content analyzed
+2. **Anonymisation:** No identifiable information in API requests
 3. **OpenAI Data Policy:** Content not used for model training (as per OpenAI Enterprise agreement)
 4. **Retention:** OpenAI retains data for 30 days for abuse monitoring only
 5. **Australian Privacy Principles:** Compliant with APP 8 (Cross-border disclosure)
@@ -1250,7 +1249,7 @@ ROI: ($8,439.72 - $2.28) / $2.28 × 100 = 370,000%
 - **Semantic Analysis:** Understanding meaning and context, not just keywords
 
 **Project Terms:**
-- **D-1 Processing:** Analyzing projects created one day prior
+- **D-1 Processing:** Analysing projects created one day prior
 - **Bulk Import/Migration:** Large batch of historical projects added to system
 - **Regular Operations:** Day-to-day project creation by users
 - **Flagging Rate:** Percentage of projects that trigger AI flags
@@ -1292,7 +1291,7 @@ Phase 3b (Oct 3 - Nov 3, 2025) will determine whether threshold adjustments can 
 - **If Phase 3b succeeds** (>40% precision, <35% flagging for regular ops): Proceed to production deployment in November 2025
 - **If Phase 3b falls short**: Consider extended iteration (Phase 3c) or hybrid approaches detailed in Alternative Recommendations section
 
-The economic case is compelling: at less than $0.0004 per project and potential for 20+ hours/month in time savings, even modest improvements in precision will deliver substantial ROI. The infrastructure is proven, the technology is reliable, and the path to optimization is clear.
+The economic case is compelling: at less than $0.0004 per project and potential for 20+ hours/month in time savings, even modest improvements in precision will deliver substantial ROI. The infrastructure is proven, the technology is reliable, and the path to optimisation is clear.
 -->
 **Final Note:**
 This pilot represents a significant step toward scalable, AI-assisted content moderation at ASF. Success requires continued collaboration between technical implementation (Insights) and domain expertise (FST) to refine thresholds and maintain policy alignment. With the right calibration, this system can help ASF scale its fundraising operations while maintaining the highest standards of compliance and safety.
