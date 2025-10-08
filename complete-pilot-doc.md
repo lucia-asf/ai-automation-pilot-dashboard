@@ -774,7 +774,6 @@ Given that migrations were outside the original pilot scope and represent atypic
 - Custom model fine-tuning on ASF-specific policies
 - Predictive risk scoring for campaigns
 -->
----
 <!--
 ## Risk Assessment & Mitigation
 
@@ -826,7 +825,6 @@ Given that migrations were outside the original pilot scope and represent atypic
 3. **Documentation:** All threshold changes logged with rationale
 4. **Stakeholder review:** FST team reviews major changes
 -->
----
 
 ## Governance & Ongoing Management
 
@@ -890,7 +888,6 @@ Given that migrations were outside the original pilot scope and represent atypic
 - Include: Date, categories affected, old/new thresholds, rationale
 - Accessible to FST team and Insights team
 
----
 <!--
 ## Knowledge Transfer & Documentation
 
@@ -1310,8 +1307,9 @@ This pilot represents a significant step toward scalable, AI-assisted content mo
 - Insights Team
 - Confluence: [Link to doc](https://sportsfoundation.atlassian.net/wiki/spaces/ARAI/pages/2511372379/Fundraising+campaign+screening+automation?focusedCommentId=2517106704)
 
----
+-<!--
+--
 
 **END OF DOCUMENT**
 
-*This document is maintained in Confluence and should be referenced as the authoritative source for pilot results and recommendations. For questions or clarifications, contact Lucia via the Insights Team.*
+*This document is maintained in Confluence and should be referenced as the authoritative source for pilot results and recommendations. For questions or clarifications, contact Lucia via the Insights Team.* -->
