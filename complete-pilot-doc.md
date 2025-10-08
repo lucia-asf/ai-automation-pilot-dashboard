@@ -1,14 +1,3 @@
-## Document Control
-
-**Version:** 1.1  
-**Author:** Lucia  
-**Next Review:** November 3, 2025 (after Phase 3b completion)
-
-**Distribution:**
-- AI Working Group
-- Insights Team
-- Confluence: [Link to doc](https://sportsfoundation.atlassian.net/wiki/spaces/ARAI/pages/2511372379/Fundraising+campaign+screening+automation?focusedCommentId=2517106704)
-
 ## OpenAI Campaign Automation Pilot Documentation
 
 **Project:** FST Fundraiser Review Board (FRB) AI Moderation  
@@ -1380,30 +1369,16 @@ This pilot represents a significant step toward scalable, AI-assisted content mo
 
 ---
 
-## Sign-Off
+## Document Control
 
-**Prepared by:** Lucia, Insights Team  
-**Date:** October 8, 2025  
-**Status:** Submitted for review
+**Version:** 1.1  
+**Author:** Lucia  
+**Next Review:** November 3, 2025 (after Phase 3b completion)
 
-**Approval Required:**
-
-- [ ] **FST Lead (Stacie Brand)** - Operational acceptance  
-      *Signature:* _________________ *Date:* _______
-
-- [ ] **Insights Team Lead** - Technical and strategic approval  
-      *Signature:* _________________ *Date:* _______
-
-- [ ] **Privacy Officer** - Data compliance confirmation  
-      *Signature:* _________________ *Date:* _______
-
-**Next Review Date:** November 3, 2025 (Post Phase 3b completion)
-
-**Distribution List:**
-- FST Team (Stacie, Amy, Andrew)
+**Distribution:**
+- AI Working Group
 - Insights Team
-- Privacy & Compliance Team
-- Leadership Team (for information)
+- Confluence: [Link to doc](https://sportsfoundation.atlassian.net/wiki/spaces/ARAI/pages/2511372379/Fundraising+campaign+screening+automation?focusedCommentId=2517106704)
 
 ---
 
