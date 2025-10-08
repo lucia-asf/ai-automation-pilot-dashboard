@@ -1169,6 +1169,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 | Custom ML model | $50,000-150,000 | $500-1,000 | $6,000-12,000 |
 | Additional staff (0.2 FTE) | $0 | $1,200 | $14,400 |
 
+<!--
 **ROI Calculation (Projected after Phase 3b):**
 ```
 Assumptions:
@@ -1192,7 +1193,7 @@ ROI: ($8,439.72 - $2.28) / $2.28 × 100 = 370,000%
 ```
 
 *Note: ROI calculation assumes Phase 3b achieves target performance. Phase 3a had negative time savings due to false positives.*
-
+-->
 ---
 
 ### Appendix D: Data Privacy Compliance
