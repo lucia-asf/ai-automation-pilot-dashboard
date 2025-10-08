@@ -1197,14 +1197,11 @@ ROI: ($8,439.72 - $2.28) / $2.28 × 100 = 370,000%
 **Personal Information Handling:**
 
 **Data NOT Shared with OpenAI:**
-- ❌ Donor names
-- ❌ Donor email addresses
-- ❌ Donor physical addresses
+- ❌ Contact names
+- ❌ Contact email addresses
+- ❌ Club/contact addresses
+- ❌ Gender, Age, Date of Birth
 - ❌ Phone numbers
-- ❌ Date of birth
-- ❌ Gender
-- ❌ Payment information
-- ❌ Club officer contact details
 
 **Data Shared with OpenAI (Content Only):**
 - ✅ Project story/description (public-facing)
@@ -1217,8 +1214,7 @@ ROI: ($8,439.72 - $2.28) / $2.28 × 100 = 370,000%
 2. **Anonymisation:** No identifiable information in API requests
 3. **OpenAI Data Policy:** Content not used for model training (as per OpenAI Enterprise agreement)
 4. **Retention:** OpenAI retains data for 30 days for abuse monitoring only
-5. **Australian Privacy Principles:** Compliant with APP 8 (Cross-border disclosure)
-
+<!--
 **Audit Trail:**
 - All API requests logged (without content) in GitHub Actions
 - 90-day retention of execution logs
@@ -1230,7 +1226,7 @@ ROI: ($8,439.72 - $2.28) / $2.28 × 100 = 370,000%
 **Privacy Act Compliance:**
 - Australian Privacy Act 1988 compliance confirmed
 - No cross-border data issues (OpenAI uses Australian AWS region where available)
-
+-->
 ---
 
 ### Appendix E: Glossary
@@ -1250,12 +1246,6 @@ ROI: ($8,439.72 - $2.28) / $2.28 × 100 = 370,000%
 - **Bulk Import/Migration:** Large batch of historical projects added to system
 - **Regular Operations:** Day-to-day project creation by users
 - **Flagging Rate:** Percentage of projects that trigger AI flags
-
-**ASF Terms:**
-- **FST:** Fundraising Support Team
-- **FRB:** Fundraiser Review Board
-- **ASF:** Australian Sports Foundation
-- **Campaign:** Fundraising project on ASF platform
 
 **Technical Terms:**
 - **API:** Application Programming Interface - allows systems to communicate
@@ -1307,7 +1297,7 @@ This pilot represents a significant step toward scalable, AI-assisted content mo
 - Insights Team
 - Confluence: [Link to doc](https://sportsfoundation.atlassian.net/wiki/spaces/ARAI/pages/2511372379/Fundraising+campaign+screening+automation?focusedCommentId=2517106704)
 
--<!--
+<!--
 --
 
 **END OF DOCUMENT**
