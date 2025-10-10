@@ -693,18 +693,16 @@ Given that migrations were outside the original pilot scope and represent atypic
 -->
 ## Recommendations & Next Steps
 
-### Phase 3b Evaluation (Nov 3, 2025)
+### Next Steps: Phase 3b Evaluation (Nov 3, 2025)
 
-**Next Steps:**
-
-## Phase 4: Fine-Tuned Model (Oct 17 - Nov 3, 2025)
+### Phase 4: Fine-Tuned Model (Oct 17 - Nov 3, 2025)
 
 **Objective:** Train custom model using Phase 3a and 3b Jira ticket data to improve precision
 
 **Approach:**
 
 Phase 3a and 3b's Jira tickets provide labelled training data based on FST team's actual moderation decisions:
-- **396 usable examples**: 30 true violations + 366 false positives
+- **TBD XX usable examples**: 30 true violations + 366 false positives
 - Use `jira_finetuning_prep.py` to convert Jira CSV into OpenAI training format
 - Use `finetuning_integration.py` to upload data and train model (~15-30 minutes)
 - Deploy fine-tuned model (gpt-4o-mini) to replace base model
@@ -759,7 +757,6 @@ Base model lacks ASF-specific context and flags legitimate fundraising language 
 - Positive FST team feedback
 - Net time savings >X hours/month
 -->
----
 <!--
 ## Alternative Recommendations
 
@@ -1003,7 +1000,7 @@ Base model lacks ASF-specific context and flags legitimate fundraising language 
 - **False flag:** "Thanks to our sponsors XYZ Corp" flagged as Sponsorship
 - **Learning:** Thanking existing sponsors isn't seeking sponsorship
 - **Action:** Distinguish between solicitation and acknowledgment
-
+<!--
 ---
 
 ## Comparative Analysis
@@ -1023,7 +1020,7 @@ Base model lacks ASF-specific context and flags legitimate fundraising language 
 - ✅ **Recall:** Significantly better than industry (100% vs 70-85%)
 - ❌ **Precision:** Below industry standard (needs Phase 3b improvement)
 - ✅ **Scalability:** Comparable to major platforms
-
+-->
 ---
 
 ## Appendices
