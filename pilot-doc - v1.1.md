@@ -610,7 +610,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 - 0 missed daily executions
 
 ---
-
+<!--
 ## Business Impact
 
 ### Return on Investment (ROI)
@@ -690,7 +690,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 - ✅ Cost remains negligible even at 50x volume
 
 ---
-
+-->
 ## Recommendations & Next Steps
 
 ### Phase 3b Evaluation (Nov 3, 2025)
@@ -825,7 +825,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 3. **Documentation:** All threshold changes logged with rationale
 4. **Stakeholder review:** FST team reviews major changes
 -->
-
+<!--
 ## Governance & Ongoing Management
 
 ### Roles & Responsibilities
@@ -887,7 +887,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 - All changes documented in Confluence
 - Include: Date, categories affected, old/new thresholds, rationale
 - Accessible to FST team and Insights team
-
+-->
 <!--
 ## Knowledge Transfer & Documentation
 
