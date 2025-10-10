@@ -3,7 +3,7 @@
 **Project:** FST Fundraiser Review Board (FRB) AI Moderation  
 **Period:** May 1 - November 3, 2025  
 **Status:** Phase 3a Complete | Phase 3b In Progress  
-**Last Updated:** October 7, 2025
+**Last Updated:** October 10, 2025
 
 ---
 
@@ -39,7 +39,8 @@ To create an automated workflow using AI to support the FST team in moderating p
 | **Phase 1: Setup** | May 1 - June 3 | ✅ Complete | Infrastructure setup, API integration, initial testing |
 | **Phase 2: Simple Moderation** | June 3 - Sep 5 | ✅ Complete | Keyword flagging, basic automation, GitHub Actions setup |
 | **Phase 3a: Full Moderation v1** | Sep 5 - Oct 3 | ✅ Complete | AI classification with sentiment analysis, full results analysed |
-| **Phase 3b: Full Moderation v2** | Oct 3 - Nov 3 | 🔄 In Progress | Refined thresholds, reduced false positives (results pending) |
+| **Phase 3b: Full Moderation v2** | Oct 3 - Oct 17 | 🔄 In Progress | Refined thresholds, reduced false positives (results pending) |
+| **Phase 4: FIne Tuning Model** | Oct 17 - Nov 3 |  | Train custom model using Phase 3a and 3b Jira ticket data to improve precision |
 
 **Note:** Projects were not reviewed by the automated system before August 26, 2025 due to API issues.
 
@@ -395,7 +396,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 
 ---
 
-### Phase 3b: Full Moderation v2 (Oct 3 - Nov 3, 2025)
+### Phase 3b: Full Moderation v2 (Oct 3 - Oct 17, 2025)
 
 **Objective:** Reduce false positive rate through threshold refinement
 
@@ -691,7 +692,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 -->
 ## Recommendations & Next Steps
 
-### Next Steps: Phase 3b Evaluation (Nov 3, 2025)
+### Next Steps: Phase 3b Evaluation (Oct 17, 2025)
 
 ### Phase 4: Fine-Tuned Model (Oct 17 - Nov 3, 2025)
 
@@ -741,7 +742,7 @@ Base model lacks ASF-specific context and flags legitimate fundraising language 
 
 | Milestone | Date | Activities |
 |-----------|------|------------|
-| Phase 3b Results | Nov 3, 2025 | Complete analysis of refined thresholds; prepare recommendation report |
+| Phase 3b Results | Oct 17, 2025 | Complete analysis of refined thresholds; prepare recommendation report |
 | Decision Point | Nov 10, 2025 | FST team + Insights team review; Go/No-go decision for production |
 | Production Prep | Nov 11-17, 2025 | Documentation finalisation; handover procedures; training materials |
 | Production Launch | Nov 18, 2025 | Enable production mode; monitor for 2 weeks |
