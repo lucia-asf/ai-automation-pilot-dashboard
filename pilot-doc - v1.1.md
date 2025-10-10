@@ -697,6 +697,36 @@ Given that migrations were outside the original pilot scope and represent atypic
 
 **Next Steps:**
 
+## Phase 4: Fine-Tuned Model (Oct 17 - Nov 3, 2025)
+
+**Objective:** Train custom model using Phase 3a and 3b Jira ticket data to improve precision
+
+**Approach:**
+
+Phase 3a and 3b's Jira tickets provide labelled training data based on FST team's actual moderation decisions:
+- **396 usable examples**: 30 true violations + 366 false positives
+- Use `jira_finetuning_prep.py` to convert Jira CSV into OpenAI training format
+- Use `finetuning_integration.py` to upload data and train model (~15-30 minutes)
+- Deploy fine-tuned model (gpt-4o-mini) to replace base model
+
+**Why Fine-Tuning:**
+Base model lacks ASF-specific context and flags legitimate fundraising language ("Help us reach our goal") as violations. Custom model trained on FST team's decisions will distinguish actual policy violations from compliant content.
+
+**Expected Results:**
+
+| Metric | Phase 3a Baseline | Phase 3b Target |
+|--------|------------------|-----------------|
+| Precision (Regular Ops) | 11.6% | **>40%** |
+| Flagging Rate | 49.7% | **<35%** |
+| False Positives/Month | 99 | **<50** |
+| Monthly Cost | $0.19 | $0.38 (+$0.19) |
+
+**Maintenance:** Retrain model every X months with new Jira data (~$9/quarter) for continuous improvement.
+
+**Results:** *To be added after Phase 4 completion*
+
+---
+<!--
 ✅ **Proceed if (Regular Operations Metrics):**
 - Flagging rate <35% (baseline: 49.7%)
 - Precision rate >40% (baseline: 11.6%)
@@ -708,7 +738,7 @@ Given that migrations were outside the original pilot scope and represent atypic
 - Precision <40%
 - FST team identifies specific threshold adjustments
 - Cost remains <$5/month
-<!--
+
 ### Proposed Timeline for Next Phase
 
 **Phase 4: Production Deployment (If Phase 3b Successful)**
@@ -922,7 +952,6 @@ Given that migrations were outside the original pilot scope and represent atypic
 - **After 90 days:** Monthly reviews + on-demand support
 - **Slack channel:** #ai-moderation-support for questions
 -->
----
 
 ## Success Stories & Use Cases
 
