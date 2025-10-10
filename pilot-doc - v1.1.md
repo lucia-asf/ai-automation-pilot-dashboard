@@ -1315,7 +1315,7 @@ This pilot represents a significant step toward scalable, AI-assisted content mo
 
 **Version:** 1.1  
 **Author:** Lucia  
-**Next Review:** November 3, 2025 (after Phase 3b completion)
+**Next Review:** Oct 17, 2025 (after Phase 3b completion)
 
 **Distribution:**
 - AI Working Group
