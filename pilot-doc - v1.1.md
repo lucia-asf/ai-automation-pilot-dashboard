@@ -6,6 +6,13 @@
 **Last Updated:** October 10, 2025
 
 ---
+> [!NOTE]
+> [!WARNING]
+> [!IMPORTANT]
+> [!TIP]
+> [!CAUTION]
+> This is a special note block.
+---
 
 ## Executive Summary
 
