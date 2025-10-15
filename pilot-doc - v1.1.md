@@ -7,9 +7,17 @@
 
 ---
 > [!NOTE]
+> This is a special note block.
+
 > [!WARNING]
+> This is a special note block.
+
 > [!IMPORTANT]
+> This is a special note block.
+
 > [!TIP]
+> This is a special note block.
+
 > [!CAUTION]
 > This is a special note block.
 ---
