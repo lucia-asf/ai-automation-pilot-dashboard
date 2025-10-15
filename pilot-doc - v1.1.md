@@ -18,8 +18,8 @@
 10. Appendices
 11. Conclusion
 ---
-<details>
-<summary>## Executive Summary</summary>
+
+## Executive Summary
 
 The FST team requires an automated workflow to support fundraising campaign and page content moderation. As the Australian Sports Foundation continues to scale, human-based content moderation alone cannot meet safety, regulatory, and operational needs. This pilot demonstrates that AI-powered content moderation using OpenAI's API can help the FST team reclaim time currently spent on manual review.
 
@@ -33,7 +33,10 @@ The FST team requires an automated workflow to support fundraising campaign and 
 - **6.0% overall precision rate** (11.6% for regular operations, 3.2% for bulk migrations)
 
 **Key Finding:** Regular operations showed better performance (11.6% precision) than bulk migrations (3.2% precision). While the AI successfully identified all policy violations, the high false positive rate created unsustainable review overhead. Threshold adjustments implemented on October 2, 2025 are being evaluated in Phase 3b.
-</details>
+
+> [!NOTE]
+> Regular operations vs bulk migration
+> Script has since been adjusted to exclude migrated projects.
 ---
 
 ## Pilot Overview
@@ -129,10 +132,10 @@ To create an automated workflow using AI to support the FST team in moderating p
 ### Evaluation Criteria
 
 **Phase 3a Success Metrics:**
-- ✅ Daily automated execution without manual intervention
-- ✅ All policy violations identified (100% recall on confirmed cases)
-- ⚠️ Acceptable false positive rate (<20% target, 68.4% actual)
-- ⚠️ Precision rate (>50% target, 6.0% actual)
+- Daily automated execution without manual intervention
+- All policy violations identified (100% recall on confirmed cases)
+- Acceptable false positive rate (<20% target, 68.4% actual)
+- Precision rate (>50% target, 6.0% actual)
 
 ---
 
