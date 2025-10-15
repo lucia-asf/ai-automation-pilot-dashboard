@@ -8,9 +8,6 @@
 ---
 > [!NOTE]
 > This is a special note block.
-
-> [!IMPORTANT]
-> This is a special note block.
 ---
 
 ## Executive Summary
