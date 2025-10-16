@@ -38,9 +38,6 @@ The FST team requires an automated workflow to support fundraising campaign and 
 
 **Key Finding:** Regular operations showed better performance (11.6% precision) than bulk migrations (3.2% precision). While the AI successfully identified all policy violations, the high false positive rate created unsustainable review overhead. Threshold adjustments implemented on October 2, 2025 are being evaluated in Phase 3b.
 
-> [!NOTE]
-> Regular operations vs bulk migration
-> Script has since been adjusted to exclude migrated projects.
 ---
 
 ## Pilot Overview
@@ -226,7 +223,8 @@ To create an automated workflow using AI to support the FST team in moderating p
 
 ### Regular Operations vs Bulk Migrations Analysis
 
-**Note:** During Phase 3a, two data migrations occurred (Sep 17: 188 projects, Sep 29: 214 projects), representing 58% of total volume. These migrations were not part of the original pilot scope but were processed by the system, providing valuable insights into system performance under different scenarios.
+< [!NOTE]
+< During Phase 3a, two data migrations occurred (Sep 17: 188 projects, Sep 29: 214 projects), representing 58% of total volume. These migrations were not part of the original pilot scope but were processed by the system, providing valuable insights into system performance under different scenarios.
 
 #### Dual Analysis: Comparing Regular Operations to Bulk Imports
 
