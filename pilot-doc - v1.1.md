@@ -19,7 +19,9 @@
 
 **Fix:** Train custom model on Phase 3a's 396 FST team decisions → expect 11.6% to >40% precision
 
-**Cost:** +$0.19/month for fine-tuned model
+**Cost:** ~$0.19/month for fine-tuned model
+
+
 ---
 
 ## Table of Contents
