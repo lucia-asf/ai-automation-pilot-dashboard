@@ -11,9 +11,9 @@
 
 **Tested:** AI automation for moderating 688 fundraising campaigns (Sep-Oct 2025)
 
-**Good news:** 100% automated, caught all violations, cost only $0.19, highly scalable
+**What worked:** 100% automated, caught all violations, cost only $0.19, highly scalable
 
-**Bad news:** 68% false positive rate—flagged too many compliant campaigns incorrectly
+**What didn't work:** 68% false positive rate—flagged too many compliant campaigns incorrectly
 
 **Why:** Base AI model doesn't understand ASF-specific fundraising language
 
