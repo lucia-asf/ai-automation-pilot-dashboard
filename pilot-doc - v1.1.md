@@ -223,8 +223,8 @@ To create an automated workflow using AI to support the FST team in moderating p
 
 ### Regular Operations vs Bulk Migrations Analysis
 
-< [!NOTE]
-< During Phase 3a, two data migrations occurred (Sep 17: 188 projects, Sep 29: 214 projects), representing 58% of total volume. These migrations were not part of the original pilot scope but were processed by the system, providing valuable insights into system performance under different scenarios.
+> [!NOTE]
+> During Phase 3a, two data migrations occurred (Sep 17: 188 projects, Sep 29: 214 projects), representing 58% of total volume. These migrations were not part of the original pilot scope but were processed by the system, providing valuable insights into system performance under different scenarios.
 
 #### Dual Analysis: Comparing Regular Operations to Bulk Imports
 
