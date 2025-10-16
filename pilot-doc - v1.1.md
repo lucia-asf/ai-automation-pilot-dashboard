@@ -132,7 +132,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 6. Ticket Creation: Flagged projects create Jira tickets with evidence
 7. Human Review: FST team reviews and takes action (Done/In Progress/To Do)
 ```
-
+<!--
 ### Evaluation Criteria
 
 **Phase 3a Success Metrics:**
@@ -140,7 +140,7 @@ To create an automated workflow using AI to support the FST team in moderating p
 - All policy violations identified (100% recall on confirmed cases)
 - Acceptable false positive rate (<20% target, 68.4% actual)
 - Precision rate (>50% target, 6.0% actual)
-
+-->
 ---
 
 ## Phase-by-Phase Results
