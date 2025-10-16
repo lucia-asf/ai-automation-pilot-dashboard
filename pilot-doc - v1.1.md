@@ -6,37 +6,12 @@
 **Last Updated:** October 10, 2025
 
 ---
-1. Executive Summary
-2. Overview
-3. Approach & Methodology
-4. Results
-5. Challenges & Limitations
-6. Key Learnings
-7. Technical Performance Details
-8. Recommendations & Next Steps
-9. Success Stories & Use Cases
-10. Appendices
-11. Conclusion
-
-12. ## Table of Contents
+## Table of Contents
 
 1. [Executive Summary](#executive-summary)
 2. [Pilot Overview](#pilot-overview)
-   - [Objective](#objective)
-   - [Timeline](#timeline)
-   - [Scope](#scope)
-   - [Users](#users)
-   - [Expected Benefits](#expected-benefits)
 3. [Approach & Methodology](#approach--methodology)
-   - [Technology Stack](#technology-stack)
-   - [Data Privacy & Security](#data-privacy--security)
-   - [Workflow Architecture](#workflow-architecture)
-   - [Evaluation Criteria](#evaluation-criteria)
-4. [Phase-by-Phase Results](#phase-by-phase-results)
-   - [Phase 1: Setup](#phase-1-setup-may-1---june-3-2025)
-   - [Phase 2: Simple Moderation](#phase-2-simple-moderation-june-3---sep-5-2025)
-   - [Phase 3a: Full Moderation v1](#phase-3a-full-moderation-v1-sep-5---oct-3-2025)
-   - [Phase 3b: Fine-Tuned Model](#phase-3b-fine-tuned-model-oct-17---nov-3-2025)
+4. [Results](#phase-by-phase-results)
 5. [Challenges & Limitations](#challenges--limitations)
 6. [Key Learnings](#key-learnings)
 7. [Technical Performance Details](#technical-performance-details)
