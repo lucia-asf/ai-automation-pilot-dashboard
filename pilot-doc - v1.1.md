@@ -72,8 +72,8 @@ To create an automated workflow using AI to support the FST team in moderating p
 | **Phase 1: Setup** | May 1 - June 3 | ✅ Complete | Infrastructure setup, API integration, initial testing |
 | **Phase 2: Simple Moderation** | June 3 - Sep 5 | ✅ Complete | Keyword flagging, basic automation, GitHub Actions setup |
 | **Phase 3a: Full Moderation v1** | Sep 5 - Oct 3 | ✅ Complete | AI classification with sentiment analysis, full results analysed |
-| **Phase 3b: Full Moderation v2** | Oct 3 - Oct 17 | 🔄 In Progress | Refined thresholds, reduced false positives (results pending) |
-| **Phase 4: FIne Tuning Model** | Oct 17 - Nov 3 |  | Train custom model using Phase 3a and 3b Jira ticket data to improve precision |
+| **Phase 3b: Full Moderation v2** | Oct 3 - Oct 20 | 🔄 In Progress | Refined thresholds, reduced false positives (results pending) |
+| **Phase 4: FIne Tuning Model** | Oct 21 - Nov 3 |  | Train custom model using Phase 3a and 3b Jira ticket data to improve precision |
 
 **Note:** Projects were not reviewed by the automated system before August 26, 2025 due to API issues.
 
